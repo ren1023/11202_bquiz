@@ -1,44 +1,59 @@
 <?php
 include_once "db.php";
-//dd ($_POST); 除錯用
+dd ($_POST); // 除錯用
+//dd 的輸入資料_start
+// Array
+// (
+//     [text] => Array
+//         (
+//             [0] => 4dfsg
+//             [1] => 1234
+//             [2] => jklj;
+//             [3] => dfgagsfd
+//             [4] => sgsgfs
+//         )
 
-// foreach($_POST['id'] as $key => $id){
-    
-//     $row=$Title->find($id);
-    
-//     $row['img']=$_POST['img'];
-    
-    
-    
-    
+//     [id] => Array
+//         (
+//             [0] => 4
+//             [1] => 5
+//             [2] => 6
+//             [3] => 7
+//             [4] => 8
+//         )
 
+//     [del] => Array
+//         (
+//             [0] => 5
+//         )
 
-
-// foreach($_POST['id'] as $key => $id){
-//     $row=$Title->find($id);
-//     // dd($row);
-//     $row ['text']= $_POST ['text'][$key];// 表單送來的資料，再去更新資料表的資料。
-//     dd($row);
-//     $Title -> save($row);
-// }
-// foreach($_POST['id'] as $id){
-// $row=$Title-> find($id);
-////if ($id==$_POST ['sh']){// 每一筆資料都要確認
-// //     $row['sh']=1;
-// // }else{
-// //     $row['sh']=0;
-// // }
-// $row['sh']=($id==$_POST['sh'])?1:0;
-// $Title->save($row);
-// }
-
-// foreach($_POST['del'] as $id){
-//     $Title ->save($id);
-// }
-    
+//     [sh] => 6
+// )
 
 
+//dd 的輸入資料_end
 
+print_r($_POST['id']);
+// Array ( [0] => 4 [1] => 5 [2] => 6 [3] => 7 [4] => 8 )
 
+// 檢查是否有刪除的資料，查詢是否有 del 的 id 資料。
+foreach($_POST['id'] as $key => $id){
+    // 從 $_POST 輸入資料陣列中，取得 del 的 id=5, 而且 這個 id 有在 $_POST ['del'] 的陣列中。 
+    if (isset ($_POST ['del']) && in_array ($id,$_POST ['del'])){    
+        $Title->del ($id);  // 就去執行 del $(id)，刪除這筆資料
+    }else{
+        $row=$Title->find ($id);// 提供 $id , 搜尋出 其它欄位資料。
+        echo  "<br>";
+        print_r($row);  //Array ( [id] => 4 [img] => 01B04.jpg [text] => 4dfsg [sh] => 0 )
+        exit();
+        $row ['text']=$_POST ['text'][$key];// [text] => 4dfsg
+        
+        $row['sh']=($id==$_POST['sh'])?1:0; //[sh] => 0
+        $Title->save($row);
+    }
+}
+
+header("location:index.php");
 
 ?>
+

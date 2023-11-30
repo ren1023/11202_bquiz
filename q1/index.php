@@ -24,6 +24,9 @@
         
 <?php
  $img=$Title->find(['sh'=>1]);
+ 
+ dd($img);
+ 
 ?>
         <img src="./img/<?=$img['img'];?>" alt="">
         
@@ -43,6 +46,7 @@
                 <?php
                 $rows=$Title->all();
                 foreach ($rows as $row) {
+                    print_r ($row);
 
                 ?>
                     <tr>
