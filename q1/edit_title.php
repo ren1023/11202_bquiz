@@ -49,9 +49,9 @@ foreach($_POST['id'] as $key => $id){
     }else{
         $row=$Title->find ($id);// 提供 $id , 搜尋出 其它欄位資料。
         echo  "<br>";
-        //print_r ($row);  //dbug 用 Array ( [id] => 4 [img] => 01B04.jpg [text] => 4dfsg [sh] => 0 )
+        //print_r ($row);  
         // exit();//dbug
-        $row ['text']=$_POST ['text'][$key];// [text] => 4dfsg
+        $row ['text']=$_POST ['text'][$key];// 從 text的陣列中，取出 text的值，再給row的 text
         
         $row['sh']=($id==$_POST['sh'])?1:0; //[sh] => 0
         $Title->save($row);

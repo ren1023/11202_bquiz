@@ -11,7 +11,6 @@
     <form action="add_title.php" method="post" enctype="multipart/form-data">
     <table class="col-8 m-auto">
         <tr>
-            
             <td> 標題區圖片 </td>
             <td><input type="file" name="img" id=""></td>
         </tr>
@@ -25,8 +24,5 @@
         <input type="reset" value="重置">
     </div>
     </form>
-
-
-   
 </body>
 </html>

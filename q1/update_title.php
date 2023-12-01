@@ -12,6 +12,8 @@ if(isset($_POST['id'])){
     }
 }
 
-header('localtion:index.php');
+// echo "test";//for dbug
+// exit();//for dbug
+header("location:index.php");
 
 ?>

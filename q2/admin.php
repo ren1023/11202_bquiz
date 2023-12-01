@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>問卷管理後台</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
+
 <body>
     <header class="container p-5">
         <h1 class="text-center">問卷管理</h1>
@@ -23,10 +25,13 @@
                 </div>
                 <!-- 選項 -->
                 <div class="bg-light">
-                    <div class="p-2">
+
+
+
+                    <div class="p-2" id="option">
                         <label for="">選項</label>
                         <input type="text" name="opt[]">
-                        <input type="button" value="更多">
+                        <input type="button" value="更多" onclick="more()">
                     </div>
                 </div>
                 <div>
@@ -40,4 +45,16 @@
     <script src="../js/bootstrap.js"></script>
     </main>
 </body>
+
 </html>
+<script>
+    // 請在id=option前面，不停的幫忙塞此表
+    function more() {
+        let opt = `<div class="p-2">
+                    <label for="">選項</label>
+                    <input type="text" name="opt[]">
+                    <input type="button" value="更多">
+                    </div>`
+                    $("#option").before(opt)
+    }
+</script>
