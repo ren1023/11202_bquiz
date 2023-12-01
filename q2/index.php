@@ -1,17 +1,42 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> 物件導向練習 </title>
+    <title> 問卷調查 </title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
+
 <body>
-    <ul>
-        <li><a href="/q1"> 題組一 </a></li>
-        <li><a href="/q2"> 題組二 </a></li>
-        <li><a href="/q3"> 題組三 </a></li>
-        <li><a href="/q4"> 題組四 </a></li>
-    </ul>
-    
+    <header class="p-5">
+        <h1 class="text-center">問卷調查</h1>
+    </header>
+    <main class="container">
+        <fieldset>
+            <legend>目前位置：首頁 > 問卷調查</legend>
+            <table class="table">
+                <tr>
+                    <th>編號</th>
+                    <th>問卷題目</th>
+                    <th>投票總數</th>
+                    <th>結果</th>
+                    <th>狀態</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+
+
+            
+        </fieldset>
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script src="../js/bootstrap.js"></script>
+    </main>
 </body>
 </html>

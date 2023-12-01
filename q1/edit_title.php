@@ -33,8 +33,13 @@ dd ($_POST); // 除錯用
 
 //dd 的輸入資料_end
 
-print_r($_POST['id']);
-// Array ( [0] => 4 [1] => 5 [2] => 6 [3] => 7 [4] => 8 )
+//print_r ($_POST ['id']);//dbug 用
+// Array ( 
+// [0] => 4 
+// [1] => 5  ----> del
+// [2] => 6 ----->sh
+// [3] => 7 
+// [4] => 8 )
 
 // 檢查是否有刪除的資料，查詢是否有 del 的 id 資料。
 foreach($_POST['id'] as $key => $id){
@@ -44,8 +49,8 @@ foreach($_POST['id'] as $key => $id){
     }else{
         $row=$Title->find ($id);// 提供 $id , 搜尋出 其它欄位資料。
         echo  "<br>";
-        print_r($row);  //Array ( [id] => 4 [img] => 01B04.jpg [text] => 4dfsg [sh] => 0 )
-        exit();
+        //print_r ($row);  //dbug 用 Array ( [id] => 4 [img] => 01B04.jpg [text] => 4dfsg [sh] => 0 )
+        // exit();//dbug
         $row ['text']=$_POST ['text'][$key];// [text] => 4dfsg
         
         $row['sh']=($id==$_POST['sh'])?1:0; //[sh] => 0

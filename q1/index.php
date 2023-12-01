@@ -25,7 +25,7 @@
 <?php
  $img=$Title->find(['sh'=>1]);
  
- dd($img);
+//  dd($img);
  
 ?>
         <img src="./img/<?=$img['img'];?>" alt="">
@@ -46,7 +46,7 @@
                 <?php
                 $rows=$Title->all();
                 foreach ($rows as $row) {
-                    print_r ($row);
+                    // print_r ($row);
 
                 ?>
                     <tr>
@@ -54,7 +54,8 @@
                         <td><input type="text" name="text[]" id="" value="<?=$row['text'];?>" style="width:90%"></td>
                         <td><input type="radio" name="sh" id="" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>></td>
                         <td><input type="checkbox" name="del[]" id="" value="<?=$row['id'];?>"></td>
-                        <td><input class='btn btn-primary' type="button" value="更新圖片"></td>
+                        <!-- <td><input class='btn btn-primary' type="button" onclick="op ('#cover','#cvr','upload_title.php?id=<?=$row ['id'];?>')"  value="更新圖片"></td> -->
+                        <td><input class='btn btn-primary' type="button" value="更新圖片" onclick="op ('#cover','#cvr','upload_title.php?id=<?=$row ['id'];?>')"></td>
                         <input type="hidden" name="id[]" value="<?=$row['id'];?>">
                     </tr>
                 <?php
