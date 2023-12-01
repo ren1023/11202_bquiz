@@ -51,9 +51,9 @@ foreach($_POST['id'] as $key => $id){
         echo  "<br>";
         //print_r ($row);  
         // exit();//dbug
-        $row ['text']=$_POST ['text'][$key];// 從 text的陣列中，取出 text的值，再給row的 text
+        $row ['text']=$_POST ['text'][$key];// 從 text的陣列中，透過$key來確認，取出 text裡的該筆資料的值，再存到row的 text中
         
-        $row['sh']=($id==$_POST['sh'])?1:0; //[sh] => 0
+        $row['sh']=($id==$_POST['sh'])?1:0; //[sh] => 0，三維運算，如果sh陣列資料中有id的值，則將1存入，表示要呈現這個圖片。
         $Title->save($row);
     }
 }

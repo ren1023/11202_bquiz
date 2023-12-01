@@ -14,7 +14,7 @@ dd($_POST);
 // )
 //儲存資料
 $data=[];//宣告一個空陣列。
-$data['text']=$_POST['subject'];//將主題存到資料表
+$data['text']=$_POST['subject'];//將從表單來的主題存到資料表
 $data['subject_id']=0;//問卷主題，都設為0
 $data['count']=0;
 $data['sh']=1;//是否show在monitor上，上架使用，預設為1，表示上架

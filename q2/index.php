@@ -1,3 +1,4 @@
+<?php include_once "db.php"; ?>
 <!DOCTYPE html>
 <html lang="zh-TW">
 
@@ -23,6 +24,28 @@
                     <th>結果</th>
                     <th>狀態</th>
                 </tr>
+                <!-- 撈出所有的題目 -->
+                <?php
+                $ques = $Que->all(['subject_id' => 0]);
+                foreach ($ques as $idx => $que) {
+                ?>
+                    <tr>
+                        <td><?= $idx + 1 ?></td>
+                        <td><?= $que['text']; ?></td>
+                        <td><?= $que['count']; ?></td>
+                        <td><a class="btn btn-info btn-sm" href="result.php?id=<?= $que['id']; ?>">投票結果</a></td>
+                        <td>
+                            <a class="btn btn-warning" href="./vote.php?id=<?= $que['id']; ?>">我要投票</a>
+                        </td>
+                    </tr>
+
+                <?php
+
+                }
+                ?>
+
+
+
                 <tr>
                     <td></td>
                     <td></td>
@@ -33,10 +56,11 @@
             </table>
 
 
-            
+
         </fieldset>
         <script src="../js/jquery-3.4.1.min.js"></script>
         <script src="../js/bootstrap.js"></script>
     </main>
 </body>
+
 </html>

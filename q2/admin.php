@@ -26,9 +26,9 @@
                 <div class="bg-light">
                     <div class="p-2" id="option">
                         <label for="">選項</label>
-                        <input type="text" name="opt[]">
+                        <input type="text" name="opt[]"> <!-- 因為是一次會有多筆的項選，故傳入資料時，會使用陣列的資料型態 -->
                         <input type="button" value="更多" onclick="more()">
-                    </div>
+                    </div> <!-- 點選更多的按鈕時，會新增一列選項，透過 onclick來觸發  more()這段程式來增加一列 -->
                 </div>
                 <div>
                     <input type="submit" value="新增">
@@ -36,6 +36,8 @@
                 </div>
             </form>
         </fieldset>
+
+        <!-- 問卷列表 -->
         <fieldset>
             <legend class="mt-5" >問卷列表</legend>
             <div class="col-7 mx-auto">
