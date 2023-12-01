@@ -55,7 +55,10 @@
                             <td><?= $idx+1; ?></td>  <!-- 編號欄位的資料 -->
                             <td><?= $que['text']; ?></td>  <!-- 主題內容 -->
                             <td> <!-- 操作欄位有3個按鈕 -->
-                                <button class="btn btn-info">顯示</button>
+                                <a href="./api/show.php?id=<?=$que['id'];?>">
+                                    <button class="btn  <?=($que['sh']==1)?'btn-info':'btn-secondary';?>">
+                                        <?=($que['sh']==1)?'顯示':'隱藏';?></button>
+                                </a>                                
                                 <button class="btn btn-success">編輯</button>
                                 <a href="./api/del.php?id=<?=$que['id'];?>"> <!-- 當我點刪除時，透過 id的欄位去提供給 del.php這隻api去刪除資料 -->
                                     <button class="btn btn-danger">刪除</button>

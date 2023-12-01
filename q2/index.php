@@ -24,7 +24,7 @@
                 </tr>
                 <!-- 撈出所有的題目 -->
                 <?php
-                $ques = $Que->all(['subject_id' => 0]);
+                $ques = $Que->all(['subject_id' => 0,'sh'=>1]);
                 foreach ($ques as $idx => $que) {
                 ?>
                     <tr>
