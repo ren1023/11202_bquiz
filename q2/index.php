@@ -1,14 +1,12 @@
 <?php include_once "db.php"; ?>
 <!DOCTYPE html>
 <html lang="zh-TW">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 問卷調查 </title>
     <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
-
 <body>
     <header class="p-5">
         <h1 class="text-center">問卷調查</h1>
@@ -33,34 +31,25 @@
                         <td><?= $idx + 1 ?></td>
                         <td><?= $que['text']; ?></td>
                         <td><?= $que['count']; ?></td>
-                        <td><a class="btn btn-info btn-sm" href="result.php?id=<?= $que['id']; ?>">投票結果</a></td>
+                        <td><a class="btn btn-info btn-sm" href="./result.php?= $que['id']; ?>">投票結果</a></td>
                         <td>
                             <a class="btn btn-warning" href="./vote.php?id=<?= $que['id']; ?>">我要投票</a>
                         </td>
                     </tr>
-
                 <?php
-
                 }
                 ?>
-
-
-
-                <tr>
+                <!-- <tr>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
-                </tr>
+                </tr> -->
             </table>
-
-
-
         </fieldset>
         <script src="../js/jquery-3.4.1.min.js"></script>
         <script src="../js/bootstrap.js"></script>
     </main>
 </body>
-
 </html>
