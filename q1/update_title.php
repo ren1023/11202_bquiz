@@ -12,6 +12,6 @@ if(isset($_POST['id'])){
     }
 }
 
-// header('localtion:index.php');
+header('localtion:index.php');
 
 ?>

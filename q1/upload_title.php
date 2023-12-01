@@ -7,7 +7,7 @@
             
             <td> 標題區圖片 </td>
             <td><input type="file" name="img" id=""></td>
-            <input type="hidden" name="id" value="<?$_GET['id'];?>">
+            <input type="hidden" name="id" value="<?=$_GET['id'];?>">
             
         </tr>
       
