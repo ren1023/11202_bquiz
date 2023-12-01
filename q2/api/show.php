@@ -9,6 +9,6 @@ if ($que['sh']== 0){
     $que['sh']= 0;
 }
 
-$Que-> save($que['sh']);
+$Que-> save($que);
 
 header("location:../admin.php");
